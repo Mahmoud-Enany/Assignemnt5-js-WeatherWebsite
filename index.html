@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#home">
+                <i class="fas fa-cloud weather-icon me-2"></i>
+                <div>
+                    <div class="brand-name">Weather</div>
+                    <div class="brand-tagline">tagline goes here</div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home" onclick="showSection('home')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Live cameras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link contact-btn" href="#contact" onclick="showSection('contact')">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <div id="home" class="page-section">
+        <section class="hero-section">
+            <div class="container">
+                <div class="search-container">
+                    <input type="text" class="form-control search-input" id="locationInput" placeholder="Find your location...">
+                    <button class="btn search-btn" onclick="searchWeather()">Find</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="weather-section py-5">
+            <div class="container">
+                <div class="row" id="weatherCards">
+                    <!-- Weather cards will be populated here -->
+                    <div class="col-md-4 mb-4">
+                        <div class="weather-card">
+                            <div class="card-header">
+                                <h5>Thursday</h5>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="city-name">Cairo</h3>
+                                <div class="temperature">29.4°C</div>
+                                <div class="weather-icon-container">
+                                    <i class="fas fa-moon weather-condition-icon"></i>
+                                </div>
+                                <div class="condition">Clear</div>
+                                <div class="weather-details">
+                                    <div class="detail-item">
+                                        <i class="fas fa-eye"></i>
+                                        <span>20%</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-wind"></i>
+                                        <span>16km/h</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <i class="fas fa-compass"></i>
+                                        <span>East</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="weather-card">
+                            <div class="card-header">
+                                <h5>3 July</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="temperature">40°C</div>
+                                <div class="low-temp">25.4°</div>
+                                <div class="weather-icon-container">
+                                    <i class="fas fa-sun weather-condition-icon sunny"></i>
+                                </div>
+                                <div class="condition sunny-text">Sunny</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="weather-card">
+                            <div class="card-header">
+                                <h5>Saturday</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="temperature">40°C</div>
+                                <div class="low-temp">25.2°</div>
+                                <div class="weather-icon-container">
+                                    <i class="fas fa-sun weather-condition-icon sunny"></i>
+                                </div>
+                                <div class="condition sunny-text">Sunny</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="page-section" style="display: none;">
+        <section class="contact-breadcrumb">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#home" onclick="showSection('home')">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <section class="contact-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt contact-icon"></i>
+                                <div class="contact-details">
+                                    <h4>Company Name INC.</h4>
+                                    <p>2803 Avenue Street, Los Angeles</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-phone contact-icon"></i>
+                                <div class="contact-details">
+                                    <p>+1 800 314 235</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-envelope contact-icon"></i>
+                                <div class="contact-details">
+                                    <p>contact@companyname.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="contact-form-container">
+                            <h2 class="contact-title">Contact us</h2>
+                            <p class="contact-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consectetur inventore ducimus, facilis, numquam id soluta omnis eius recusandae nesciunt vero repellat harum cum. Nisi facilis odit hic, ipsum sed!</p>
+                            
+                            <form class="contact-form">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control" placeholder="Your name...">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="email" class="form-control" placeholder="Email Address...">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control" placeholder="Company name...">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control" placeholder="Website...">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" rows="5" placeholder="Message..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="subscribe-form d-flex">
+                        <input type="email" class="form-control" placeholder="Enter your email to subscribe...">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-icons text-end">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <p class="copyright">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script>
+        // Function to show/hide sections
+        function showSection(sectionName) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show the selected section
+            document.getElementById(sectionName).style.display = 'block';
+            
+            // Update navbar active state
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Add active class to clicked link
+            const activeLink = document.querySelector(`[href="#${sectionName}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+            
+            // Update brand name based on section
+            const brandName = document.querySelector('.brand-name');
+            if (sectionName === 'contact') {
+                brandName.textContent = 'Company name';
+            } else {
+                brandName.textContent = 'Weather';
+            }
+        }
+        
+        // Initialize with home section
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('home');
+        });
+    </script>
+</body>
+</html>
+

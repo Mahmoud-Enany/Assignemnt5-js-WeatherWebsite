@@ -1,0 +1,497 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #1e202b !important;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+.weather-icon {
+    color: #00bcd4;
+    font-size: 2rem;
+}
+
+.brand-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.brand-tagline {
+    font-size: 0.8rem;
+    color: #cccccc;
+    line-height: 1;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+    margin: 0 10px;
+    padding: 8px 16px !important;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(0, 188, 212, 0.1);
+}
+
+.navbar-nav .nav-link.active {
+    background-color: transparent;
+    border: 2px solid #00bcd4;
+    color: #ffffff !important;
+}
+
+.contact-btn {
+    border: 2px solid #00bcd4 !important;
+    border-radius: 20px !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(58, 70, 81, 0.3);
+}
+
+.search-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 0;
+}
+
+.search-input {
+    background-color: rgba(58, 70, 81, 0.9);
+    border: none;
+    color: #ffffff;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    border-radius: 50px 0 0 50px;
+    flex: 1;
+}
+
+.search-input::placeholder {
+    color: #cccccc;
+}
+
+.search-input:focus {
+    background-color: rgba(58, 70, 81, 0.95);
+    border: none;
+    box-shadow: none;
+    color: #ffffff;
+}
+
+.search-btn {
+    background-color: #00bcd4;
+    border: none;
+    color: #ffffff;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 0 50px 50px 0;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #00acc1;
+    color: #ffffff;
+}
+
+/* Weather Section */
+.weather-section {
+    background: linear-gradient(135deg, #1e202b 0%, #1e202b 50%, #1e202b 100%);
+    padding: 60px 0;
+}
+
+.weather-card {
+    background-color: #4a5661;
+    border-radius: 15px;
+    padding: 0;
+    margin-bottom: 30px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.weather-card .card-header {
+    background-color: #4a5661;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    color: #ffffff;
+}
+
+.weather-card .card-header h5 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.weather-card .card-body {
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.city-name {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.temperature {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 15px 0;
+    line-height: 1;
+}
+
+.low-temp {
+    font-size: 1.2rem;
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+.weather-icon-container {
+    margin: 20px 0;
+}
+
+.weather-condition-icon {
+    font-size: 3rem;
+    color: #00bcd4;
+}
+
+.weather-condition-icon.sunny {
+    color: #ffc107;
+}
+
+.condition {
+    color: #00bcd4;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.condition.sunny-text {
+    color: #ffc107;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.detail-item i {
+    color: #00bcd4;
+    font-size: 1.2rem;
+}
+
+.detail-item span {
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+/* Contact Page Styles */
+.contact-breadcrumb {
+    background-color: #1e202b;
+    padding: 20px 0;
+}
+
+.breadcrumb {
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumb-item a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.breadcrumb-item.active {
+    color: #cccccc;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "→";
+    color: #cccccc;
+}
+
+.contact-content {
+    background-color: #1e202b;
+    padding: 80px 0;
+}
+
+.contact-info {
+    padding: 40px 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.contact-icon {
+    color: #00bcd4;
+    font-size: 1.5rem;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.contact-details h4 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.contact-details p {
+    color: #cccccc;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.contact-form-container {
+    padding: 40px;
+    background-color: #1e202b;
+    border-radius: 15px;
+}
+
+.contact-title {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.contact-description {
+    color: #cccccc;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.contact-form .form-control {
+    background-color: #3a4651;
+    border: 1px solid #3a4651;
+    color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.contact-form .form-control::placeholder {
+    color: #999999;
+}
+
+.contact-form .form-control:focus {
+    background-color: #3a4651;
+    border-color: #00bcd4;
+    box-shadow: 0 0 0 0.2rem rgba(0, 188, 212, 0.25);
+    color: #ffffff;
+}
+
+.contact-form textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background-color: #00bcd4;
+    border: none;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #00acc1;
+    transform: translateY(-2px);
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #1e202b;
+    padding: 40px 0 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.subscribe-form {
+    gap: 0;
+}
+
+.subscribe-form .form-control {
+    background-color: #3a4651;
+    border: 1px solid #3a4651;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 25px 0 0 25px;
+    border-right: none;
+}
+
+.subscribe-form .form-control::placeholder {
+    color: #999999;
+}
+
+.subscribe-form .form-control:focus {
+    background-color: #3a4651;
+    border-color: #3a4651;
+    box-shadow: none;
+    color: #ffffff;
+}
+
+.subscribe-form .btn-primary {
+    background-color: #00bcd4;
+    border: 1px solid #00bcd4;
+    border-radius: 0 25px 25px 0;
+    padding: 12px 25px;
+    border-left: none;
+}
+
+.subscribe-form .btn-primary:hover {
+    background-color: #00acc1;
+    border-color: #00acc1;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #3a4651;
+    color: #00bcd4;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #00bcd4;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.copyright {
+    color: #999999;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 50vh;
+        padding: 40px 0;
+    }
+    
+    .search-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 20px;
+    }
+    
+    .search-input,
+    .search-btn {
+        border-radius: 25px;
+        width: 100%;
+    }
+    
+    .weather-card .temperature {
+        font-size: 2.5rem;
+    }
+    
+    .contact-form-container {
+        padding: 30px 20px;
+        margin-top: 40px;
+    }
+    
+    .contact-title {
+        font-size: 2rem;
+    }
+    
+    .social-icons {
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .subscribe-form {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand .brand-name {
+        font-size: 1rem;
+    }
+    
+    .weather-icon {
+        font-size: 1.5rem;
+    }
+    
+    .weather-details {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .detail-item {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
